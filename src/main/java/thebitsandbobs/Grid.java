@@ -31,9 +31,22 @@ public class Grid {
         return new Life(lifeGrid[x][y]);
     }
 
+    public static Life[][] deepCopy(Life[][] lifers) {
+        Life[][] returnGird = new Life[lifers.length][];
+        for (int i = 0; i < lifers.length; i++) {
+            returnGird[i] = new Life[lifers[i].length];
+            for (int j = 0; j < lifers[i].length; j++) {
+                returnGird[i][j] = new Life(lifers[i][j]);
+            }
+        }
+
+        return returnGird;
+    }
+
     public Life[][] update() {
         Life[][] gird = getLifeGrid();
-        Life[][] returnGird = gird.clone();
+        Life[][] returnGird = Grid.deepCopy(gird);
+
         for (int i = 0; i < gird.length; i++) {
             Life[] a = gird[i];
             for (int j = 0; j < a.length; j++) {
@@ -55,6 +68,7 @@ public class Grid {
 
     @Override
     public String toString() {
+
         return "Grid{" +
                 "lifeGrid=" + Arrays.toString(lifeGrid) +
                 '}';

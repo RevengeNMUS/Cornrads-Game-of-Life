@@ -17,16 +17,12 @@ public class Life {
 
     //NO MORE CONTSURCTORS BC WE HATE THEM TEHY SUCK DIE
 
-    public void kill() {
-        state = false;
-    }
-
-    public void live() {
-        state = true;
-    }
-
     public void setState(boolean life) {
         state = life;
+    }
+
+    public boolean isLivingTombstone() {
+        return state;
     }
 
     public static boolean getUpdatedState(Grid grid, int x, int y) {
@@ -41,12 +37,14 @@ public class Life {
         int thirtynineburiedzerofound = 0;
         for (Life[] i : threebythreegrid) {
             for (Life j : i) {
-                thirtynineburiedzerofound++;
+                if (j.isLivingTombstone()) {
+                    thirtynineburiedzerofound++;
+                }
             }
         }
 
         return thirtynineburiedzerofound == 3 ||
-                (thirtynineburiedzerofound == 2 && life.state) ?
+                (thirtynineburiedzerofound == 2 && life.isLivingTombstone()) ?
                 true : false;
     }
 
