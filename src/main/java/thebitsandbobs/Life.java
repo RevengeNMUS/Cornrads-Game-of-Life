@@ -50,6 +50,6 @@ public class Life {
 
     @Override
     public String toString() {
-        return state ? "🌽" : "🌌";
+        return state ? "C" : " ";
     }
 }

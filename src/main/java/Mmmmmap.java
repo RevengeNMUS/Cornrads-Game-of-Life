@@ -13,6 +13,10 @@ public class Mmmmmap {
 
         Life[][] sillybilly = new Life[sillystrung.getFirst().length()][listofnnumbers.length];
 
+        for (Life[] i : sillybilly) {
+            Arrays.fill(i, new Life(false));
+        }
+
         for (int i = 0; i < listofnnumbers.length; i++) {
             String[] hehehaw = sillystrung.get(i).split("");
             for (int j = 0; j < hehehaw.length; j++) {
