@@ -55,11 +55,11 @@ public class Grid {
         }
 
         lifeGrid = returnGird;
-        return lifeGrid.clone();
+        return deepCopy(returnGird);
     }
 
     public Life[][] getLifeGrid() {
-        return lifeGrid.clone();
+        return deepCopy(lifeGrid);
     }
 
     public Life[][] getLifeGridUnsafe() {
@@ -68,10 +68,12 @@ public class Grid {
 
     @Override
     public String toString() {
+        StringBuilder returnString = new StringBuilder();
 
-        return "Grid{" +
-                "lifeGrid=" + Arrays.toString(lifeGrid) +
-                '}';
-        //MAKE ACTUAL THING
+        for (Life[] i : getLifeGrid()) {
+            returnString.append(Arrays.toString(i)).append("\n");
+        }
+
+        return returnString.toString();
     }
 }
