@@ -19,15 +19,29 @@ public class Grid {
         this.lifeGrid = lifeGrid;
     }
 
-    public static Grid gridOf(Life[][] lifeArray) {
+    public static Grid of(Life[][] lifeArray) {
         return new Grid(lifeArray);
     }
 
     public Life[][] update() {
-        return null;
+        Life[][] gird = getLifeGrid();
+        Life[][] returnGird = gird.clone();
+        for (int i = 0; i < gird.length; i++) {
+            Life[] a = gird[i];
+            for (int j = 0; j < a.length; j++) {
+                returnGird[i][j].setState(Life.getUpdatedState(Grid.of(gird),i, j));
+            }
+        }
+
+        lifeGrid = returnGird;
+        return lifeGrid.clone();
     }
 
     public Life[][] getLifeGrid() {
+        return lifeGrid.clone();
+    }
+
+    public Life[][] getLifeGridUnsafe() {
         return lifeGrid;
     }
 
