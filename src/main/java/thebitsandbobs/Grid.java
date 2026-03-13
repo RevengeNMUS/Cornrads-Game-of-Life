@@ -23,6 +23,14 @@ public class Grid {
         return new Grid(lifeArray);
     }
 
+    public Life stateOf(int x, int y) {
+        if ((x < 0 || x >= lifeGrid.length) || (y < 0 || y >= lifeGrid[0].length)) {
+            return new Life(); //it out of range :(
+        }
+
+        return new Life(lifeGrid[x][y]);
+    }
+
     public Life[][] update() {
         Life[][] gird = getLifeGrid();
         Life[][] returnGird = gird.clone();

@@ -11,6 +11,10 @@ public class Life {
         state = initState;
     }
 
+    public Life(Life otherLife) {
+        state = otherLife.state;
+    }
+
     //NO MORE CONTSURCTORS BC WE HATE THEM TEHY SUCK DIE
 
     public void kill() {
@@ -26,8 +30,24 @@ public class Life {
     }
 
     public static boolean getUpdatedState(Grid grid, int x, int y) {
-        //DO SMTH FRFR HERE YOU CHUNGUS
-        return false;
+        Life life = grid.stateOf(x, y);
+
+        Life[][] threebythreegrid = {
+                {grid.stateOf(x - 1, y - 1), grid.stateOf(x, y - 1), grid.stateOf(x + 1, y - 1)},
+                {grid.stateOf(x - 1, y), grid.stateOf(x + 1, y)},
+                {grid.stateOf(x - 1, y + 1), grid.stateOf(x, y + 1), grid.stateOf(x + 1, y + 1)}
+        };
+
+        int thirtynineburiedzerofound = 0;
+        for (Life[] i : threebythreegrid) {
+            for (Life j : i) {
+                thirtynineburiedzerofound++;
+            }
+        }
+
+        return thirtynineburiedzerofound == 3 ||
+                (thirtynineburiedzerofound == 2 && life.state) ?
+                true : false;
     }
 
     @Override
