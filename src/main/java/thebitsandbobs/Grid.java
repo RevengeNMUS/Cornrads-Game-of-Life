@@ -66,6 +66,16 @@ public class Grid {
         return lifeGrid;
     }
 
+    public boolean nothingontheiniside(){
+        for (Life[] i : lifeGrid) {
+            for (Life j : i) {
+                if (j.isLivingTombstone())
+                    return false;
+            }
+        }
+        return true;
+    }
+
     @Override
     public String toString() {
         StringBuilder returnString = new StringBuilder();
