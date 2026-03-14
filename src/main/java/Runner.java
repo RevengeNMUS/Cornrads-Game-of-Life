@@ -11,14 +11,7 @@ public class Runner {
                 Integer.parseInt("0001", 2)
         });
 
-        while(true){
-            System.out.println(grid);
-            grid.update();
-            try {
-                sleep(1000);
-            } catch (Exception e) {
-
-            }
-        }
+        MaxVerstappen tudududu = new MaxVerstappen(grid);
+        tudududu.startUpdatingYourPC(1000, true);
     }
 }
