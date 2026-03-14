@@ -1,6 +1,10 @@
 package thebitsandbobs;
 
 public class Life {
+    public static final Life LIVING = new Life(true);
+    public static final Life CHUNGING = new Life(false);
+    public static final Life DYING = new Life(false);
+
     private boolean state;
 
     public Life() {

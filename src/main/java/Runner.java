@@ -4,8 +4,7 @@ import static java.lang.Thread.sleep;
 
 public class Runner {
     public static void main(String[] args) {
-
-        Integer.parseInt("1001", 2);
+        
         Grid grid = Mmmmmap.toGrid(new int[]{
                 Integer.parseInt("1001", 2),
                 Integer.parseInt("1101", 2),
@@ -13,8 +12,8 @@ public class Runner {
         });
 
         while(true){
-            grid.update();
             System.out.println(grid);
+            grid.update();
             try {
                 sleep(1000);
             } catch (Exception e) {
