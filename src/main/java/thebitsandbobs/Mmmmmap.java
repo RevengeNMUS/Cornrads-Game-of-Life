@@ -1,8 +1,6 @@
-import thebitsandbobs.Grid;
-import thebitsandbobs.Life;
+package thebitsandbobs;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Mmmmmap {
     public static Grid toGrid (int[] listofnnumbers) {

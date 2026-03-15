@@ -1,4 +1,4 @@
-import thebitsandbobs.Grid;
+package thebitsandbobs;
 
 import static java.lang.Thread.sleep;
 

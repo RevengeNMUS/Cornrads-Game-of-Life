@@ -1,8 +1,10 @@
 import thebitsandbobs.Grid;
+import thebitsandbobs.MaxVerstappen;
+import thebitsandbobs.Mmmmmap;
 
 import static java.lang.Thread.sleep;
 
-public class Runner {
+public class CrazySillyLIttolSample {
     public static void main(String[] args) {
         
         Grid grid = Mmmmmap.toGrid(new int[]{

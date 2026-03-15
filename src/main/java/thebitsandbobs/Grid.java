@@ -76,6 +76,27 @@ public class Grid {
         return true;
     }
 
+    /**
+     * both side expand
+     *
+     * @param x
+     * @param y
+     * @return
+     */
+    public Grid expandOnThat(int x, int y) {
+        Life[][] returnLife = new Life[lifeGrid.length + y*2][lifeGrid[0].length + x*2];
+
+        for (int i = 0; i < y; i++) {
+            for(Life aaaaaalife : returnLife[i]) {
+                aaaaaalife.setState(false);
+            }
+            for(Life aaaaaalife : returnLife[(lifeGrid.length - 1) - i]) {
+                aaaaaalife.setState(false);
+            }
+        }
+        return new Grid(); //default
+    }
+
     @Override
     public String toString() {
         StringBuilder returnString = new StringBuilder();
